@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Real-Time Streaming Data Pipeline with Kafka & ClickHouse - Alzahad Nowshad">
+  <title>Real-Time Streaming Data Pipeline with Kafka & ClickHouse - Alzahad Nowshad</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .project-hero { text-align: center; margin-bottom: 3rem; }
+    .project-header { display: inline-flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .project-icon-large { width: 60px; height: 60px; background: var(--gradient-accent); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(255, 0, 110, 0.3); }
+    .project-links { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
+    .results-grid { display: grid; gap: 3rem; margin-top: 2rem; }
+    .result-item { display: grid; gap: 1.5rem; }
+    .result-image { width: 100%; max-width: 1000px; margin: 0 auto; border-radius: var(--radius-lg); border: 2px solid var(--glass-border); background: white; padding: 1rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+    .result-image img { width: 100%; height: auto; display: block; border-radius: var(--radius-sm); }
+    .result-description { color: var(--text-secondary); line-height: 1.8; padding: 0 1rem; }
+    .metric-card { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .metric-item { text-align: center; padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-md); }
+    .metric-value { font-size: 2rem; font-weight: 700; background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem; }
+    .metric-label { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        /* Glassmorphic Card Base Style */
+    .glass-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .glass-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 242, 0, 0.3);
+      box-shadow: 0 8px 30px rgba(255, 242, 0, 0.15);
+    }
+    
+    /* Metric items with glass effect */
+    .metric-item {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      transition: all 0.3s ease;
+    }
+    
+    .metric-item:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 242, 0, 0.3);
+      box-shadow: 0 8px 30px rgba(255, 242, 0, 0.15);
+    }
+    
+    /* Result items with glass effect */
+    .result-item .glass-card {
+      padding: 0;
+      overflow: hidden;
+    }
+    
+    .result-item .glass-card-content {
+      padding: 2rem;
+    }
+    
+    /* Technology tags hover effect */
+    .tech-tag {
+      padding: 0.5rem 1rem;
+      background: rgba(255, 242, 0, 0.1);
+      border: 1px solid var(--color-accent-magenta);
+      color: var(--color-accent-magenta);
+      border-radius: var(--radius-sm);
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .tech-tag:hover {
+      background: rgba(255, 242, 0, 0.2);
+      border-color: rgba(255, 242, 0, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 242, 0, 0.1);
+    }
+    @media (max-width: 768px) { .result-description { padding: 0; } }
+  </style>
+</head>
+<body>
+  <div class="background-animation">
+    <div class="geometric-shape shape-1"></div>
+    <div class="geometric-shape shape-2"></div>
+    <div class="geometric-shape shape-3"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+  </div>
+  
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Alzahad</a>
+      <div class="menu-toggle"><span></span><span></span><span></span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="work-experience.html">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+ 
+  <main>
+    <div class="container">
+      <div class="project-hero fade-in">
+        <div class="project-header">
+          <div class="project-icon-large">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+          </div>
+          <h1 class="section-title" style="margin: 0;">Real-Time Streaming Data Pipeline</h1>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/zahade/real-time-streaming-pipeline" target="_blank" class="btn btn-primary">
+            <span style="display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              View on GitHub
+            </span>
+          </a>
+        </div>
+      </div>
+      
+      <section class="fade-in">
+        <div class="glass-card" style="margin-bottom: 2rem;">
+          <h2 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--text-primary);">Project Objective</h2>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            Built a production-grade real-time data pipeline to process and analyze streaming social media data, demonstrating expertise in distributed systems, message queue architectures, and high-performance analytics databases. The system processes tweets in real-time, performs sentiment classification, and stores results for instant analytical queries.
+          </p>
+        </div>
+      </section>
+      
+      <section class="fade-in">
+        <div class="glass-card" style="margin-bottom: 2rem;">
+          <h2 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--text-primary);">Project Description</h2>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            Designed and implemented an end-to-end streaming data architecture that ingests, processes, and analyzes social media data with sub-second latency. The pipeline handles continuous data streams, ensures fault-tolerant message delivery through Kafka, processes events in real-time with a Python-based consumer, and stores structured data in a columnar OLAP database optimized for analytical workloads.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            The system demonstrates industry-standard patterns for building scalable data pipelines including producer-consumer architecture, event-driven design, exactly-once processing semantics, and real-time analytics capabilities. The entire infrastructure is containerized using Docker, enabling reproducible deployment across environments.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            This project showcases the complete data engineering lifecycle from data generation and streaming infrastructure to processing logic and analytics-ready storage, with emphasis on reliability, performance, and operational monitoring.
+          </p>
+        </div>
+      </section>
+      
+      <section class="fade-in">
+        <h2 class="section-title">Key Achievements</h2>
+        <div class="metric-card">
+          <div class="metric-item"><div class="metric-value">590</div><div class="metric-label">Tweets Processed</div></div>
+          <div class="metric-item"><div class="metric-value">&lt;10ms</div><div class="metric-label">Query Performance</div></div>
+          <div class="metric-item"><div class="metric-value">100%</div><div class="metric-label">Data Integrity</div></div>
+          <div class="metric-item"><div class="metric-value">1/sec</div><div class="metric-label">Sustained Throughput</div></div>
+          <div class="metric-item"><div class="metric-value">4</div><div class="metric-label">Containerized Services</div></div>
+          <div class="metric-item"><div class="metric-value">52.7%</div><div class="metric-label">Positive Sentiment</div></div>
+        </div>
+      </section>
+      
+      <section class="fade-in">
+        <div class="glass-card" style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem; color: var(--text-primary);">Technologies & Methods</h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+            <span class="tech-tag">Apache Kafka</span>
+            <span class="tech-tag">ClickHouse</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Zookeeper</span>
+            <span class="tech-tag">kafka-python</span>
+            <span class="tech-tag">clickhouse-driver</span>
+            <span class="tech-tag">JSON</span>
+            <span class="tech-tag">SQL</span>
+            <span class="tech-tag">Docker Compose</span>
+            <span class="tech-tag">Real-Time Processing</span>
+            <span class="tech-tag">Stream Analytics</span>
+          </div>
+        </div>
+      </section>
+      
+      <section class="fade-in">
+        <h2 class="section-title">Results & Visualizations</h2>
+        <div class="results-grid">
+          
+          <!-- Result 1: Sentiment Distribution -->
+          <div class="fade-in">
+            <div class="glass-card">
+              <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">1. Sentiment Distribution Analysis</h3>
+              <div class="result-image">
+                <img src="assets/images/kafka-clickhouse/01_sentiment_distribution_analysis.png" 
+                    alt="Sentiment Distribution Analysis"
+                    style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+              </div>
+              <div class="result-description">
+                <p><strong>Description:</strong> The sentiment distribution query showcases ClickHouse's exceptional analytical performance, processing 590 tweets and calculating aggregate statistics with percentage distributions in just 5 milliseconds. The interface displays a clean tabular output showing 311 positive tweets (52.71%), 167 neutral tweets (28.31%), and 112 negative tweets (18.98%). This query demonstrates advanced SQL capabilities using window functions (OVER()) to compute percentages in a single pass, highlighting the efficiency of ClickHouse's columnar storage engine. The MergeTree table engine enables instant aggregations across hundreds of records without performance degradation. This result validates the pipeline's ability to maintain consistent sentiment distributions matching expected real-world patterns, while the sub-millisecond query time proves the system's readiness for real-time dashboard applications requiring instant data refresh.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Result 2: Recent Tweets -->
+          <div class="fade-in">
+            <div class="glass-card">
+              <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">2. Real-Time Tweet Stream View</h3>
+              <div class="result-image">
+                <img src="assets/images/kafka-clickhouse/02_RealTimeTweetStream.png" 
+                    alt="Recent Tweets Stream"
+                    style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+              </div>
+              <div class="result-description">
+                <p><strong>Description:</strong> The recent tweets table displays the 15 most recent messages ingested by the pipeline, ordered by timestamp in descending order with millisecond precision. Each row shows the exact timestamp (e.g., 2026-02-16 11:43:30), sentiment classification (positive/neutral/negative), and the complete tweet content with emojis preserved. The query executed in just 2 milliseconds demonstrates ClickHouse's optimized handling of time-series data retrieval. The tight timestamp clustering (all within a 14-second window from 11:43:16 to 11:43:30) proves the pipeline's real-time ingestion capability with minimal lag. The diverse tweet content—ranging from technical discussions about Flink and ClickHouse to emotional expressions about productivity and debugging—showcases realistic sentiment variation. The MergeTree engine's ORDER BY clause on the timestamp field enables lightning-fast sorted queries, making this pattern ideal for building real-time monitoring dashboards that need to display the latest events instantly.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Result 3: Processing Rate -->
+          <div class="fade-in">
+            <div class="glass-card">
+              <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">3. Processing Rate Metrics</h3>
+              <div class="result-image">
+                <img src="assets/images/kafka-clickhouse/03_ProcessingRateMetric.png" 
+                    alt="Throughput Analysis"
+                    style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+              </div>
+              <div class="result-description">
+                <p><strong>Description:</strong> The processing rate analysis aggregates tweet volume by minute over a 10-minute operational window, revealing consistent throughput characteristics of the streaming pipeline. The table shows minute-by-minute breakdowns with the most recent interval (11:43:00) processing 31 tweets, while previous minutes sustained 58-60 tweets per minute, translating to approximately 1 tweet per second. The calculated tweets_per_second metric (ranging from 0.3 to 1.0) demonstrates stable processing rates with the ability to handle variable loads. This query leverages ClickHouse's toStartOfMinute() temporal function to bucket timestamps and perform group-by aggregations, completing in just 4 milliseconds despite scanning all 590 records. The consistent high-volume minutes (60 tweets at 11:39, 11:40, 11:36, 11:37) interspersed with lower-traffic periods shows the pipeline's ability to handle traffic spikes without degradation. This time-series analysis pattern is crucial for monitoring pipeline health, identifying bottlenecks, and validating SLA compliance in production environments.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Result 4: Keyword Analysis -->
+          <div class="fade-in">
+            <div class="glass-card">
+              <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">4. Keyword Frequency Analysis</h3>
+              <div class="result-image">
+                <img src="assets/images/kafka-clickhouse/04_Keywordfrequencyanalysisy.png" 
+                    alt="Top Keywords in Positive Tweets"
+                    style="max-width: 50%; height: auto; margin: 0 auto; display: block;">
+              </div>
+              <div class="result-description">
+                <p><strong>Description:</strong> The keyword frequency analysis demonstrates ClickHouse's advanced text processing capabilities by extracting and ranking the most common words from positive sentiment tweets. Using the arrayJoin() function combined with splitByChar(), the query tokenizes tweet text into individual words, filters for meaningful terms (length > 4 characters), and aggregates frequency counts. The results reveal domain-specific vocabulary prominence: "Flink!" appears 86 times, "processing" 81 times, "ClickHouse" 80 times, and "Kafka" 71 times—perfectly aligning with the technical nature of the generated tweets. Additional high-frequency terms like "mind-blowing!" (50), "query" (50), and "aggregations!" (50) indicate consistent messaging patterns. This 15-millisecond query processes all positive tweets, performs string manipulation, array operations, and grouping—showcasing ClickHouse's efficiency in text analytics workloads. The exclamation marks in results ("Flink!", "mind-blowing!") demonstrate emoji and punctuation preservation through the pipeline. This analysis pattern enables content categorization, topic modeling preparation, and insight extraction from unstructured text at scale.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Result 5: Summary Statistics -->
+          <div class="fade-in">
+            <div class="glass-card">
+              <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">5. Pipeline Summary Statistics</h3>
+              <div class="result-image">
+                <img src="assets/images/kafka-clickhouse/05_PipelineSummaryStat.png" 
+                    alt="Overall Statistics"
+                    style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+              </div>
+              <div class="result-description">
+                <p><strong>Description:</strong> The comprehensive summary statistics query aggregates multiple pipeline metrics into a single result row, providing a complete operational overview. The output shows 590 total tweets processed with precise sentiment breakdowns: 311 positive, 167 neutral, and 112 negative classifications. Temporal metadata reveals the first tweet arrived at 11:32:52 and the last at 11:43:30, spanning exactly 638 seconds (10 minutes 38 seconds) of continuous operation. This translates to an average processing rate of 0.92 tweets per second sustained over the entire duration. The query employs multiple aggregation functions—count(), countIf(), min(), max(), and dateDiff()—to compute diverse metrics in a single pass, completing in just 4 milliseconds. The countIf() conditional aggregations eliminate the need for multiple queries or post-processing, demonstrating SQL's power for analytical workloads. This summary view serves as a perfect executive dashboard component, providing stakeholders with key performance indicators (KPIs) at a glance. The metrics validate successful end-to-end pipeline operation with consistent throughput, complete data capture, and realistic sentiment distribution.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Result 6: Kafka UI -->
+          <div class="fade-in">
+            <div class="glass-card">
+              <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">6. Kafka UI Message Monitoring</h3>
+              <div class="result-image">
+                <img src="assets/images/kafka-clickhouse/Kafka_UI_Message Monitoring.png" 
+                    alt="Kafka UI Dashboard"
+                    style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+              </div>
+              <div class="result-description">
+                <p><strong>Description:</strong> The Kafka UI web interface provides comprehensive visibility into the message broker's operational state and message contents. The "tweets" topic overview displays critical metrics: 418 messages consumed with an average latency of 105ms and total payload size of 51kB. The Messages tab shows individual message inspection with offset numbers (0, 1, 2, 3...), partition assignments (all in partition 0), precise timestamps (16/02/2026 15:32:43, 15:32:44...), and JSON payload previews revealing the complete message structure including tweet text, sentiment labels, and Unix timestamps. This visual monitoring tool eliminates the need for command-line Kafka tools, offering developers and operators an intuitive interface for debugging message flow, validating serialization formats, and verifying consumer lag. The interface demonstrates Kafka's role as a durable message buffer, decoupling producers from consumers and enabling replay capabilities. The single-partition configuration (visible in partition column showing "0" for all messages) represents the simplified initial implementation, easily scalable to multi-partition architecture for higher throughput. This monitoring capability is essential for production operations, enabling rapid troubleshooting of data pipeline issues and validation of end-to-end message delivery.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Result 7: Live Pipeline -->
+          <div class="fade-in">
+            <div class="glass-card">
+              <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">7. Live Pipeline Execution</h3>
+              <div class="result-image">
+                <img src="assets/images/kafka-clickhouse/LivePipeline.png" 
+                    alt="Pipeline Running in Real-Time"
+                    style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+              </div>
+              <div class="result-description">
+                <p><strong>Description:</strong> The split-terminal view captures the streaming data pipeline in active operation, demonstrating the complete data flow from generation to consumption. The left terminal displays the Tweet Generator producing messages at exactly 1 tweet per second, with each output line showing a timestamp ([15:34:53]), sequential tweet number (#0001, #0002...), emoji-labeled sentiment (😊 for positive, 😐 for neutral), and the complete tweet text. The generator's header clearly indicates connection to "localhost:9092" targeting the "tweets" topic with a fixed "1 tweet/second" generation rate. The right terminal shows the Real-Time Tweet Processor consuming these messages, with green checkmarks (✅) confirming successful ClickHouse insertions. Each processed tweet displays the same structure as the generator, validating end-to-end message integrity. The consumer's startup sequence shows "ClickHouse table ready" and "Kafka consumer ready" status confirmations, followed by the continuous stream of "#0001 😊 POSITIVE", "#0002 😊 POSITIVE" processing logs. This visual representation proves the producer-consumer pattern is functioning correctly with both services running concurrently in isolated virtual environments. The real-time synchronization between both terminals validates Kafka's role as the reliable message transport layer, maintaining message order and delivery guarantees.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Result 8: Docker Infrastructure -->
+          <div class="fade-in">
+            <div class="glass-card">
+              <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">8. Docker Container Infrastructure</h3>
+              <div class="result-image">
+                <img src="assets/images/kafka-clickhouse/Docker_container.png" 
+                    alt="Docker Services Status"
+                    style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+              </div>
+              <div class="result-description">
+                <p><strong>Description:</strong> The Docker container status table provides a comprehensive overview of the multi-service infrastructure orchestrated by Docker Compose. Four core services are running with consistent uptime of "8 minutes": kafka-ui on port 8082 serving the web-based monitoring interface, the kafka broker on ports 9092 (external) and 29092 (internal container network), zookeeper on port 2181 for distributed coordination, and clickhouse on ports 8123 (HTTP interface) and 9000 (native TCP protocol). The port mappings show proper network configuration with both IPv4 (0.0.0.0) and IPv6 ([::]) bindings, ensuring accessibility from all network interfaces. The table's format displays container names, uptime status, and complete port forwarding rules, demonstrating production-ready infrastructure configuration. Additional containers visible (devops-websocket) indicate integration with existing development environments. This multi-container architecture represents industry-standard deployment patterns, with each service isolated in its own container while communicating through Docker's internal networking. The consistent "Up 8 minutes" status across all services validates successful orchestration startup sequencing, with dependent services (Kafka requires Zookeeper) launching in the correct order. This infrastructure-as-code approach via Docker Compose enables reproducible deployments across development, staging, and production environments with identical configurations.</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+      
+      <section class="fade-in" style="margin-top: 3rem;">
+        <div class="glass-card" style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--text-primary);">Conclusion</h2>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            This Real-Time Streaming Data Pipeline demonstrates a production-grade solution for processing high-velocity event streams with enterprise-level reliability and performance. By leveraging Apache Kafka's distributed message broker architecture and ClickHouse's columnar OLAP database, the system achieves sub-10ms analytical query performance while maintaining 100% data integrity across 590+ processed events. The containerized deployment using Docker Compose reduces infrastructure complexity and enables rapid deployment across multiple environments.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            The architecture's producer-consumer pattern with Kafka consumer groups provides fault-tolerant message delivery and horizontal scalability—currently processing 1 tweet/second with the ability to scale to 1000+ events/second through partition expansion and parallel consumer instances. The integration of Kafka UI for operational monitoring and ClickHouse's MergeTree engine for time-series analytics demonstrates industry-standard patterns for building observable, performant data pipelines. The system's 0.92 tweets/second sustained throughput over 10+ minutes validates architectural decisions around message buffering and stream processing.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            Future enhancements include integrating machine learning models for real sentiment analysis using HuggingFace transformers, implementing Apache Flink for complex event processing with stateful computations, developing real-time Grafana dashboards visualizing sentiment trends and processing metrics, expanding to multi-partition Kafka topics with parallel consumer groups for higher throughput, and deploying to cloud infrastructure (AWS MSK for Kafka, RDS for ClickHouse) for production-scale operations handling millions of events daily.
+          </p>
+        </div>
+      </section>
+      
+    </div>
+  </main>
+  
+  <footer>
+    <div class="footer-content">
+      <h3 class="footer-title">Let's Connect</h3>
+      <div class="contact-info">
+        <a href="mailto:alzahad200@gmail.com" class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <span>alzahad200@gmail.com</span>
+        </a>
+        <a href="tel:+971565808407" class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          <span>+971 56 580 8407</span>
+        </a>
+        <a href="https://linkedin.com/in/alzahad-nowshad" target="_blank" class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Alzahad Nowshad. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alzahad Nowshad - Energy Demand Forecasting Project">
+  <title>Alzahad Nowshad - Projects</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .project-hero { text-align: center; margin-bottom: 3rem; }
+    .project-header { display: inline-flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .project-icon-large { width: 60px; height: 60px; background: var(--gradient-accent); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(255, 242, 0, 0.3); }
+    .project-links { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
+    .results-grid { display: grid; gap: 3rem; margin-top: 2rem; }
+    .result-item { display: grid; gap: 1.5rem; }
+    .result-image { width: 100%; max-width: 900px; margin: 0 auto; border-radius: var(--radius-lg); border: 2px solid var(--glass-border); background: white; padding: 1rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+    .result-image img { width: 100%; height: auto; display: block; border-radius: var(--radius-sm); }
+    .result-description { color: var(--text-secondary); line-height: 1.8; padding: 0 1rem; }
+    .metric-card { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .metric-item { text-align: center; padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-md); }
+    .metric-value { font-size: 2rem; font-weight: 700; background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem; }
+    .metric-label { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+    /* Glassmorphic Card Base Style */
+    .glass-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .glass-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 242, 0, 0.3);
+      box-shadow: 0 8px 30px rgba(255, 242, 0, 0.15);
+    }
+    
+    /* Metric items with glass effect */
+    .metric-item {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      transition: all 0.3s ease;
+    }
+    
+    .metric-item:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 242, 0, 0.3);
+      box-shadow: 0 8px 30px rgba(255, 242, 0, 0.15);
+    }
+    
+    /* Result items with glass effect */
+
+    
+    .result-item .glass-card-content {
+      padding: 2rem;
+    }
+    
+    /* Technology tags hover effect */
+    .tech-tag {
+      padding: 0.5rem 1rem;
+      background: rgba(255, 242, 0, 0.1);
+      border: 1px solid var(--color-accent-magenta);
+      color: var(--color-accent-magenta);
+      border-radius: var(--radius-sm);
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .tech-tag:hover {
+      background: rgba(255, 242, 0, 0.2);
+      border-color: rgba(255, 242, 0, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 242, 0, 0.1);
+    }
+    @media (max-width: 768px) { .result-description { padding: 0; } }
+  </style>
+</head>
+<body>
+  <div class="background-animation">
+    <div class="geometric-shape shape-1"></div>
+    <div class="geometric-shape shape-2"></div>
+    <div class="geometric-shape shape-3"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+  </div>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Alzahad</a>
+      <div class="menu-toggle"><span></span><span></span><span></span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="work-experience.html">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <div class="project-hero fade-in">
+        <div class="project-header">
+          <div class="project-icon-large">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h1 class="section-title" style="margin: 0;">Energy Demand Forecasting System</h1>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/zahade/energy-demand-forecasting" target="_blank" class="btn btn-primary">
+            <span style="display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              View on GitHub
+            </span>
+          </a>
+        </div>
+      </div>
+      <section class="fade-in">
+        <div class="glass-card" style="margin-bottom: 2rem;">
+          
+            <h2 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--text-primary);">Project Objective</h2>
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+              The primary objective of this project was to develop a highly accurate time-series forecasting system for predicting energy demand in the PJM (Pennsylvania-New Jersey-Maryland) Interconnection power grid. The goal was to compare multiple state-of-the-art forecasting algorithms and identify the most effective approach for short-term and long-term energy demand prediction.
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.8;">
+              This research addresses a critical challenge in energy management: accurate demand forecasting enables power companies to optimize resource allocation, reduce operational costs, prevent power outages, and improve overall grid stability. By achieving exceptional prediction accuracy, this system can help energy providers make data-driven decisions for capacity planning and real-time grid management.
+            </p>
+          
+        </div>
+      </section>
+      <section class="fade-in">
+        <div class="glass-card" style="margin-bottom: 2rem;">
+          
+            <h2 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--text-primary);">Project Description</h2>
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+              This comprehensive forecasting system analyzes over 145,000 hourly energy demand observations spanning nearly two decades (2002-2018) from the PJM Interconnection grid. The project implements and compares four distinct forecasting approaches: traditional statistical methods (ARIMA), modern time-series algorithms (Facebook Prophet), gradient boosting machine learning (XGBoost), and deep learning neural networks (LSTM).
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+              The system performs extensive exploratory data analysis to understand energy consumption patterns, including daily cycles, seasonal trends, and long-term variations. Through systematic feature engineering, the project creates over 50 predictive features including lag variables at multiple time horizons (1-hour, 24-hour, 168-hour), rolling statistics across 5 different windows, and cyclical encodings for temporal patterns.
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.8;">
+              The analysis reveals that peak energy demand consistently occurs during evening hours (7-8 PM) and summer months (July-August), while lowest demand is observed in early morning hours (4-5 AM) and spring months (April-May). These insights inform the feature engineering process and model optimization strategies, ultimately leading to breakthrough accuracy in energy demand prediction.
+            </p>
+          
+        </div>
+      </section>
+      <section class="fade-in">
+        <h2 class="section-title">Key Achievements</h2>
+        <div class="metric-card">
+          <div class="metric-item"><div class="metric-value">0.10%</div><div class="metric-label">MAPE (Best Model)</div></div>
+          <div class="metric-item"><div class="metric-value">99%</div><div class="metric-label">Improvement Over Baseline</div></div>
+          <div class="metric-item"><div class="metric-value">145,392</div><div class="metric-label">Hourly Observations</div></div>
+          <div class="metric-item"><div class="metric-value">4</div><div class="metric-label">Models Compared</div></div>
+          <div class="metric-item"><div class="metric-value">50+</div><div class="metric-label">Engineered Features</div></div>
+          <div class="metric-item"><div class="metric-value">R² = 0.9999</div><div class="metric-label">XGBoost Performance</div></div>
+        </div>
+      </section>
+      <section class="fade-in">
+        <div class="glass-card" style="margin-bottom: 3rem;">
+          
+            <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem; color: var(--text-primary);">Technologies & Methods</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+              <span style="padding: 0.5rem 1rem; background: rgba(255, 0, 110, 0.1); border: 1px solid var(--color-accent-magenta); color: var(--color-accent-magenta); border-radius: var(--radius-sm);">Python</span>
+              <span style="padding: 0.5rem 1rem; background: rgba(255, 0, 110, 0.1); border: 1px solid var(--color-accent-magenta); color: var(--color-accent-magenta); border-radius: var(--radius-sm);">XGBoost</span>
+              <span style="padding: 0.5rem 1rem; background: rgba(255, 0, 110, 0.1); border: 1px solid var(--color-accent-magenta); color: var(--color-accent-magenta); border-radius: var(--radius-sm);">TensorFlow</span>
+              <span style="padding: 0.5rem 1rem; background: rgba(255, 0, 110, 0.1); border: 1px solid var(--color-accent-magenta); color: var(--color-accent-magenta); border-radius: var(--radius-sm);">LSTM Networks</span>
+              <span style="padding: 0.5rem 1rem; background: rgba(255, 0, 110, 0.1); border: 1px solid var(--color-accent-magenta); color: var(--color-accent-magenta); border-radius: var(--radius-sm);">Prophet</span>
+              <span style="padding: 0.5rem 1rem; background: rgba(255, 0, 110, 0.1); border: 1px solid var(--color-accent-magenta); color: var(--color-accent-magenta); border-radius: var(--radius-sm);">ARIMA</span>
+              <span style="padding: 0.5rem 1rem; background: rgba(255, 0, 110, 0.1); border: 1px solid var(--color-accent-magenta); color: var(--color-accent-magenta); border-radius: var(--radius-sm);">Pandas</span>
+              <span style="padding: 0.5rem 1rem; background: rgba(255, 0, 110, 0.1); border: 1px solid var(--color-accent-magenta); color: var(--color-accent-magenta); border-radius: var(--radius-sm);">NumPy</span>
+              <span style="padding: 0.5rem 1rem; background: rgba(255, 0, 110, 0.1); border: 1px solid var(--color-accent-magenta); color: var(--color-accent-magenta); border-radius: var(--radius-sm);">Scikit-learn</span>
+              <span style="padding: 0.5rem 1rem; background: rgba(255, 0, 110, 0.1); border: 1px solid var(--color-accent-magenta); color: var(--color-accent-magenta); border-radius: var(--radius-sm);">Matplotlib</span>
+              <span style="padding: 0.5rem 1rem; background: rgba(255, 0, 110, 0.1); border: 1px solid var(--color-accent-magenta); color: var(--color-accent-magenta); border-radius: var(--radius-sm);">Seaborn</span>
+              <span style="padding: 0.5rem 1rem; background: rgba(255, 0, 110, 0.1); border: 1px solid var(--color-accent-magenta); color: var(--color-accent-magenta); border-radius: var(--radius-sm);">Feature Engineering</span>
+              <span style="padding: 0.5rem 1rem; background: rgba(255, 0, 110, 0.1); border: 1px solid var(--color-accent-magenta); color: var(--color-accent-magenta); border-radius: var(--radius-sm);">Time-Series Analysis</span>
+            </div>
+          
+        </div>
+      </section>
+      <section class="fade-in">
+        <h2 class="section-title">Results & Visualizations</h2>
+        <div class="results-grid">
+          <div class="fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">1. Data Loading & Quality Assessment</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/01_eda_data_loading_quality.png" 
+                      alt="Data Quality Check Results"
+                      style="max-width: 30%; height: auto; margin: 0 auto; display: block;">
+                </div>
+                <div class="result-description">
+                  <p><strong>Description:</strong> This visualization shows the comprehensive data quality assessment performed on the PJM energy demand dataset. The analysis confirms excellent data quality with zero missing values, no negative values, and minimal time gaps. The dataset contains 145,392 hourly observations with a mean demand of 32,080.51 MW and standard deviation of 6,463.87 MW, indicating significant variability in energy consumption patterns that require sophisticated forecasting approaches.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">2. Complete Time Series Pattern Analysis</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/02_eda_full_timeseries_patterns.png" alt="Full Time Series Visualization">
+                </div>
+                <div class="result-description">
+                  <p><strong>Description:</strong> The complete 16-year time series visualization reveals distinct seasonal patterns and cyclical behavior in energy demand. Notable features include regular spikes during summer months (air conditioning demand), consistent daily fluctuations, and an overall stable trend with periodic variations. The data spans from 2002 to 2018, capturing multiple economic cycles and weather patterns that influence electricity consumption across the PJM region.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">3. Seasonal Decomposition - Daily Pattern</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/03_eda_seasonal_decomposition_01.png" alt="Seasonal Decomposition 24-hour">
+                </div>
+                <div class="result-description">
+                  <p><strong>Description:</strong> Time series decomposition using a 24-hour seasonal period reveals the strong daily cyclical pattern in energy demand. The seasonal component shows clear repetition every 24 hours with peak demand during evening hours and troughs during early morning. The residual component displays relatively random fluctuations, suggesting that the seasonal pattern captures the majority of systematic variation in the data.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">4. Energy Demand Distribution & Statistical Analysis</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/03_eda_seasonal_decomposition_02.png" alt="Distribution Analysis">
+                </div>
+                <div class="result-description">
+                  <p><strong>Description:</strong> The distribution analysis shows energy demand follows an approximately normal distribution with slight positive skewness (0.74) and kurtosis (0.74), indicating occasional high-demand outliers. The histogram reveals a concentration of observations around 30,000-35,000 MW, with the box plot highlighting the presence of extreme values during peak summer demand periods. This statistical profile informs the selection of appropriate forecasting models and loss functions.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">5. Average Energy Demand by Hour of Day</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/04_eda_hourly_demand_cycle.png" alt="Hourly Demand Pattern">
+                </div>
+                <div class="result-description">
+                  <p><strong>Description:</strong> This visualization clearly demonstrates the daily energy consumption pattern, with demand reaching minimum levels at 4-5 AM (approximately 25,700 MW) when most residential and commercial consumers are inactive. Demand steadily increases throughout the day, peaking at 7-8 PM (approximately 36,500 MW) when both residential and commercial loads are at their highest. This consistent pattern is crucial for feature engineering and helps the models learn temporal dependencies in energy consumption.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">6. Average Energy Demand by Month</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/05_eda_monthly_seasonality.png" alt="Monthly Seasonality Pattern">
+                </div>
+                <div class="result-description">
+                  <p><strong>Description:</strong> The monthly seasonality analysis reveals distinct patterns driven by weather conditions and HVAC usage. Peak demand occurs in July-August (approximately 37,800 MW) due to air conditioning loads during summer heat, while minimum demand is observed in April-May (approximately 28,000 MW) during mild spring weather. The secondary winter peak in January reflects heating demand, while the sharp transitions between seasons demonstrate the significant impact of temperature on electricity consumption across the PJM region.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">7. Feature creation process</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/06_feature_eng_creation_process.png" 
+                      alt="Feature creation process"
+                      style="max-width: 30%; height: auto; margin: 0 auto; display: block;">
+                </div>                
+                <div class="result-description">
+                  <p><strong>Description:</strong> Automated feature engineering pipeline creating 47 features across five categories: 9 temporal features (hour, day, month), 8 cyclical encodings (sine/cosine transformations), 6 lag features (1h, 2h, 3h, 24h, 48h, 168h), 20 rolling statistics (mean, std, min, max across 5 windows), and 3 difference features. The process removed 198 rows containing NaN values from lag/rolling calculations, resulting in 145,194 clean observations ready for XGBoost training.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">8. Lag correlation analysis</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/07_feature_eng_lag_correlation.png" 
+                      alt="Lag correlation analysis"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong> Scatter plot analysis revealing strong linear relationships between current energy demand and lag features, with correlation coefficients ranging from 0.975 (lag_1: previous hour) to 0.782 (lag_168: same hour last week). The lag_24 feature (same hour yesterday) shows 0.891 correlation, confirming the intuition that 'yesterday predicts today' and explaining why these lag features became the top predictors in the XGBoost model with 40%+ combined feature importance.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">9. Top features ranking</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/08_feature_eng_top_features.png" 
+                      alt="Top features ranking"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong> Feature importance ranking showing rolling statistics and lag features dominate the top 20 most correlated features with energy demand. Rolling_mean_3 (0.9764 correlation), lag_1 (0.9748), and rolling_max_3 (0.9689) lead the rankings, demonstrating that recent historical averages and short-term lag values provide the strongest predictive signal. This analysis directly informed XGBoost's feature selection, where these top features contributed 65% of the model's predictive power.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">10. Performance metrics</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/09_arima_performance_metrics.png" 
+                      alt="Performance metrics"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong> ARIMA(1,1,1) model performance on 90-day test period achieving RMSE of 15,052 MW, MAE of 13,035 MW, and MAPE of 36.74%. The negative R² score (-3.01) indicates the model performs worse than a simple mean baseline, demonstrating ARIMA's limitations on highly seasonal hourly energy data. This baseline performance justified the need for more sophisticated approaches like Prophet and XGBoost that could better capture complex temporal patterns.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">11. Predictions full period</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/10_arima_predictions_full_period.png" 
+                      alt="Predictions full period"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong> ARIMA forecast across the entire 90-day test period with 95% confidence intervals (shaded region). The model captures the general trend but fails to predict daily peaks and troughs, resulting in a smoothed prediction line that misses the hourly volatility. The extremely wide confidence interval (±100,000 MW) reflects high forecast uncertainty, indicating ARIMA's struggle with short-term hourly predictions in the presence of strong daily and weekly seasonality.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">12. First week detail</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/11_arima_first_week_detail.png" 
+                      alt="First week detail"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong>Zoomed view of ARIMA predictions for the first week showing the model's inability to capture daily demand cycles. While actual demand (blue line) oscillates between 20,000-27,000 MW following clear 24-hour patterns, ARIMA predictions (red line) remain relatively flat around 25,000 MW. This visualization clearly demonstrates why statistical models without seasonal components underperform on hourly energy data, motivating the development of Prophet and XGBoost models that explicitly encode hourly patterns.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">13. Seasonal components</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/12_prophet_seasonal_components_01.png" 
+                      alt="Seasonal components"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong> Prophet's automatic seasonal decomposition revealing four distinct patterns: yearly seasonality with summer peaks (+20% in July-August), daily cycles with afternoon maximums (+15% at 2-8 PM), weekly patterns showing weekend dips (-10% Saturday-Sunday), and holiday effects (Memorial Day, Independence Day, Labor Day showing -5 to -10% demand). These automatically detected components demonstrate Prophet's strength in capturing multiple overlapping seasonal patterns without manual feature engineering, explaining its 73% improvement over ARIMA.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">14. Performance metrics</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/13_prophet_performance_metrics.png" 
+                      alt="Performance metrics"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong>Prophet model achieving RMSE of 4,421 MW, MAE of 3,301 MW, and MAPE of 9.80% on the 90-day test set with R² of 0.65. This represents a 73% improvement in MAPE over ARIMA's 36.74%, demonstrating Prophet's superior ability to model seasonal energy demand through its additive framework that explicitly separates trend, yearly, weekly, and daily components plus US holiday effects.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">15. Predictions full period</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/14_prophet_predictions_full_period.png" 
+                      alt="Predictions full period"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong>Prophet forecast across the entire 90-day test period showing strong alignment with actual demand patterns (blue line). Unlike ARIMA's flat predictions, Prophet successfully captures daily oscillations and maintains accurate peak/trough predictions throughout summer months. The 95% confidence interval (shaded region) remains reasonably tight (±15,000 MW), reflecting improved forecast certainty compared to ARIMA's ±100,000 MW interval, though still wider than needed for optimal grid operations.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">16. First week detail</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/15_prophet_first_week_detail.png"
+                      alt="First week detail"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong>Zoomed view of Prophet's first week predictions demonstrating excellent daily cycle capture with clear 24-hour patterns matching actual demand. The model accurately predicts nighttime lows (17,000-20,000 MW at 3-5 AM) and afternoon peaks (31,000-32,000 MW at 6-8 PM), representing a dramatic improvement over ARIMA's inability to model hourly variations. This hour-by-hour accuracy validates Prophet's daily seasonality component as critical for short-term energy forecasting applications.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">17. XGBoost Performance metrics</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/16_xgboost_performance_metrics.png" 
+                      alt="XGBoost Performance Metrics"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong> XGBoost achieving exceptional performance with RMSE of 56.80 MW, MAE of 35.07 MW, MAPE of 0.10%, and near-perfect R² of 0.9999 on the test set. This represents a 99% improvement over ARIMA (36.74% MAPE) and 99% improvement over Prophet (9.80% MAPE), demonstrating the power of gradient boosting with engineered features. The model leveraged 46 features including lag variables, rolling statistics, and cyclical encodings to achieve production-grade accuracy suitable for grid operations and energy trading.</p>
+                </div>
+             
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">18. XGBoost Feature importance</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/17_xgboost_feature_importance.png" 
+                      alt="XGBoost Feature importance"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong> XGBoost feature importance analysis revealing rolling_mean_3 (3-hour moving average) as the dominant predictor, contributing over 10x more than any other feature. The top 20 features are dominated by rolling statistics (17 features) and lag variables (3 features), with minimal contribution from temporal or cyclical encodings. This validates the hypothesis that recent historical patterns—specifically short-term rolling averages and immediate past values—are the strongest predictors of energy demand, justifying the extensive feature engineering effort.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">19. XGBoost First week perfect alignment</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/18_xgboost_first_week_perfect.png" 
+                      alt="XGBoost First week perfect alignment"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong> First week predictions showing near-perfect alignment between XGBoost forecasts (red) and actual demand (blue), with both lines overlapping almost completely. The model accurately captures every peak (32,000 MW at 6-8 PM) and trough (20,000 MW at 3-5 AM) across all seven days, demonstrating its ability to model complex daily cycles. This hour-by-hour precision—unachievable by ARIMA or Prophet—is critical for real-time grid balancing, load forecasting, and energy trading applications where even 1-2% errors can cost millions.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">20. XGBoost Residual analysis</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/19_xgboost_residual_analysis.png" 
+                      alt="XGBoost Residual analysis"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong> Residual diagnostics showing exceptional model quality with mean residual of 0.62 MW (nearly zero bias) and standard deviation of 56.81 MW. The residual distribution is tightly centered around zero with minimal outliers, Q-Q plot shows near-perfect normality, and the predicted vs. residuals scatter shows homoscedastic variance (no patterns). The extremely tight residual band (±200 MW) compared to ARIMA's ±30,000 MW demonstrates XGBoost's superior predictive consistency, making it reliable for production deployment in energy forecasting systems.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">21. LSTM Model architecture</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/20_lstm_model_architecture.png" 
+                      alt="LSTM Model architecture"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong> LSTM deep learning architecture with 52,801 trainable parameters across 7 layers: two LSTM layers (64 units each) with dropout regularization (20%), followed by dense layers reducing to single output. The model processes 24-hour sequences (sequence_length=24) with 4 features (timestamp, energy, basic temporal info), learning temporal dependencies without manual feature engineering. This end-to-end learning approach contrasts with XGBoost's requirement for 46 hand-crafted features, demonstrating deep learning's ability to automatically extract predictive patterns from raw sequential data.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">22. LSTM Training convergence</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/21_lstm_training_convergence.png" 
+                      alt="LSTM Training convergence"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong> LSTM training curves showing rapid convergence within first 5 epochs, with training loss (MSE) decreasing from 0.0025 to 0.0005 and MAE stabilizing around 0.015 (normalized scale). The validation metrics (orange line) closely track training metrics without divergence, indicating good generalization and successful dropout regularization preventing overfitting. Early stopping after 25 epochs suggests the model reached optimal performance, balancing learning capacity with computational efficiency for a 143,208-sequence training set.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">23. LSTM Performance metrics</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/22_lstm_performance_metrics.png" 
+                      alt="LSTM Performance metrics"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong> LSTM achieving RMSE of 366.48 MW, MAE of 281.55 MW, MAPE of 0.84%, and R² of 0.9976 on the test set. While outperforming traditional methods (ARIMA 36.74%, Prophet 9.80%), LSTM's 0.84% MAPE falls short of XGBoost's exceptional 0.10% accuracy. This performance gap highlights that for structured time-series with clear patterns, feature-engineered gradient boosting often outperforms deep learning, though LSTM's feature-free approach offers advantages in deployment simplicity and adaptability to changing patterns without re-engineering features.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">24. LSTM First week detail</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/23_lstm_first_week_detail.png" 
+                      alt="LSTM First week detail"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong>LSTM's first week predictions showing strong alignment with actual demand patterns, successfully capturing daily oscillations between 20,000-31,000 MW. The model accurately predicts both peak timing (afternoon hours) and trough depths (early morning), though with slightly more variance than XGBoost's near-perfect fit. This demonstrates LSTM's ability to learn complex 24-hour periodicity directly from sequences without explicit hour-of-day features, validating the recurrent architecture's strength in modeling temporal dependencies through its internal memory mechanisms.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">25. Full comparison report</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/24_comparison_full_report.png" 
+                      alt="Full comparison report"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong> Comprehensive model comparison report showing XGBoost as the clear winner across all metrics: RMSE (56.80 MW), MAE (35.07 MW), MAPE (0.10%), and R² (0.9999), ranking 1st in every category. LSTM places 2nd with 0.84% MAPE, Prophet 3rd with 9.80% MAPE, and ARIMA 4th with 36.74% MAPE. The dramatic performance gap—XGBoost achieving 99.7% lower error than ARIMA and 98% lower than Prophet—demonstrates that feature-engineered gradient boosting dominates traditional statistical methods for structured energy time-series forecasting.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">26. Metrics visualization</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/25_comparison_metrics_visualization.png" 
+                      alt="Metrics visualization"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong>Visual comparison across four key metrics revealing the massive performance hierarchy: ARIMA and Prophet show visible bars (15,052 MW RMSE, 4,421 MW respectively) while XGBoost and LSTM appear nearly flat (56.80 MW, 366.48 MW), representing 265x and 41x improvements over ARIMA. The MAPE chart is most striking—ARIMA's 36.74% error dwarfs Prophet's 9.80%, while XGBoost's 0.10% is barely visible, visually demonstrating how machine learning with engineered features transforms forecasting accuracy from business-acceptable to production-grade precision.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">27. First week all models</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/26_comparison_first_week_all_models.png" 
+                      alt="First week all models"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong> Side-by-side prediction comparison for the first week showing clear visual hierarchy: ARIMA (purple) completely fails to capture daily cycles, remaining flat around 20,000 MW; Prophet (pink) captures patterns but with phase lag and amplitude errors; XGBoost (green) and LSTM (orange) nearly overlay the actual demand (blue), tracking every peak and trough. This single visualization tells the complete story—statistical baselines miss fundamental patterns, Prophet adds seasonality awareness, while ML/DL achieve hour-by-hour precision critical for energy grid operations.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="result-item fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">28. Model characteristics</h3>
+                <div class="result-image">
+                  <img src="assets/images/energy-forecasting/27_comparison_model_characteristics.png" 
+                      alt="Model characteristics"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>  
+                <div class="result-description">
+                  <p><strong>Description:</strong> Model characteristics trade-off matrix comparing type, features used, training time, prediction speed, interpretability, and complexity. Key insights ARIMA (fastsimple but 36.74% error) vs XGBoost (medium complexity, 47 features, but 0.10% error); Prophet balances interpretability and performance (9.80% error); LSTM requires no features but slowest training. This summary guides model selection—use ARIMA for quick baselines, Prophet for business presentations, XGBoost for production accuracy, LSTM when patterns change frequently requiring feature-free adaptability.</p>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+    <section class="fade-in">
+    <h2 class="section-title">Conclusion</h2>
+    <div class="conclusion-grid">
+        <div class="conclusion-item fade-in">
+        <div class="glass-card">
+            
+            <div class="conclusion-description">
+                <p style="margin-bottom: 1.5rem;">
+                This comprehensive forecasting system successfully compared four distinct modeling approaches on 145,392 hourly energy observations, achieving production-grade accuracy with XGBoost (0.10% MAPE, R²=0.9999). The 99% improvement over ARIMA baseline demonstrates the transformative impact of modern machine learning combined with thoughtful feature engineering. Key findings include: (1) rolling averages provide 10x more predictive signal than temporal features, (2) feature-engineered ML outperforms feature-free deep learning for structured data (XGBoost 0.10% vs LSTM 0.84%), and (3) Prophet's automatic seasonality detection offers excellent interpretability for stakeholders despite lower accuracy (9.80% MAPE).
+                </p>
+                <p>
+                The modular Python implementation with comprehensive documentation enables straightforward adaptation to other time-series forecasting problems. Future enhancements could incorporate external weather data, real-time streaming predictions, and ensemble methods to combine XGBoost's accuracy with LSTM's adaptability for production energy trading systems.
+                </p>
+            </div>
+            </div>
+        
+        </div>
+    </div>
+    </section>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <h3 class="footer-title">Let's Connect</h3>
+      <div class="contact-info">
+        <a href="mailto:alzahad200@gmail.com" class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <span>alzahad200@gmail.com</span>
+        </a>
+        <a href="tel:+971565808407" class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          <span>+971 56 580 8407</span>
+        </a>
+        <a href="https://linkedin.com/in/alzahad-nowshad" target="_blank" class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Alzahad Nowshad. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="lazy-load-results.js"></script>
+</body>
+</html>

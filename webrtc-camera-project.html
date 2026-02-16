@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cloud-Based WebRTC Camera Streaming System - Alzahad Nowshad">
+  <title>WebRTC Camera Streaming - Alzahad Nowshad</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .project-hero { text-align: center; margin-bottom: 3rem; }
+    .project-header { display: inline-flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .project-icon-large { width: 60px; height: 60px; background: var(--gradient-accent); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(255, 0, 110, 0.3); }
+    .project-links { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
+    .results-grid { display: grid; gap: 3rem; margin-top: 2rem; }
+    .result-item { display: grid; gap: 1.5rem; }
+    .result-image { width: 100%; max-width: 1000px; margin: 0 auto; border-radius: var(--radius-lg); border: 2px solid var(--glass-border); background: white; padding: 1rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+    .result-image img { width: 100%; height: auto; display: block; border-radius: var(--radius-sm); }
+    .result-description { color: var(--text-secondary); line-height: 1.8; padding: 0 1rem; }
+    .metric-card { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .metric-item { text-align: center; padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-md); }
+    .metric-value { font-size: 2rem; font-weight: 700; background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem; }
+    .metric-label { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        /* Glassmorphic Card Base Style */
+    .glass-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .glass-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 242, 0, 0.3);
+      box-shadow: 0 8px 30px rgba(255, 242, 0, 0.15);
+    }
+    
+    /* Metric items with glass effect */
+    .metric-item {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      transition: all 0.3s ease;
+    }
+    
+    .metric-item:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 242, 0, 0.3);
+      box-shadow: 0 8px 30px rgba(255, 242, 0, 0.15);
+    }
+    
+    /* Result items with glass effect */
+    .result-item .glass-card {
+      padding: 0;
+      overflow: hidden;
+    }
+    
+    .result-item .glass-card-content {
+      padding: 2rem;
+    }
+    
+    /* Technology tags hover effect */
+    .tech-tag {
+      padding: 0.5rem 1rem;
+      background: rgba(255, 242, 0, 0.1);
+      border: 1px solid var(--color-accent-magenta);
+      color: var(--color-accent-magenta);
+      border-radius: var(--radius-sm);
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .tech-tag:hover {
+      background: rgba(255, 242, 0, 0.2);
+      border-color: rgba(255, 242, 0, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 242, 0, 0.1);
+    }
+    @media (max-width: 768px) { .result-description { padding: 0; } }
+  </style>
+</head>
+<body>
+  <div class="background-animation">
+    <div class="geometric-shape shape-1"></div>
+    <div class="geometric-shape shape-2"></div>
+    <div class="geometric-shape shape-3"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+  </div>
+  
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Alzahad</a>
+      <div class="menu-toggle"><span></span><span></span><span></span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="work-experience.html">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main>
+    <div class="container">
+      <div class="project-hero fade-in">
+        <div class="project-header">
+          <div class="project-icon-large">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+          </div>
+          <h1 class="section-title" style="margin: 0;">Cloud-Based WebRTC Camera Streaming System</h1>
+        </div>
+      </div>
+      
+      <section class="fade-in">
+        <div class="glass-card" style="margin-bottom: 2rem;">
+          <h2 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--text-primary);">Project Objective</h2>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            The primary objective of this project was to develop a self-hosted, cloud-based surveillance infrastructure that enables remote camera access across multiple networks without requiring port forwarding at client sites. Traditional IP camera systems require complex networking configurations, VPN setups, or port forwarding, creating security vulnerabilities and deployment challenges. This system eliminates these barriers by leveraging WebRTC technology and cloud-based signaling servers.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            The goal was to architect a scalable, manufacturer-agnostic solution that automatically discovers cameras via RTSP streams, establishes peer-to-peer connections through TURN/STUN servers, and delivers real-time video streams to a centralized web dashboard accessible from anywhere. This infrastructure supports 20+ sites, providing secure, low-latency video surveillance without networking overhead.
+          </p>
+        </div>
+      </section>
+      
+      <section class="fade-in">
+        <div class="glass-card" style="margin-bottom: 2rem;">
+          <h2 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--text-primary);">Project Description</h2>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            This cloud-based surveillance system consists of four core components working in concert: a camera agent application running at client sites, multiple cloud VMs hosting TURN/STUN servers for NAT traversal, a WebSocket signaling server for WebRTC negotiation, and a responsive web dashboard. The architecture enables seamless video streaming across network boundaries without exposing client infrastructure to the internet.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            The camera agent, built with Python and Tkinter, runs locally at each client site and provides an intuitive GUI for adding cameras via RTSP URLs. When a camera is added, the agent automatically generates a go2rtc YAML configuration file that defines the camera source and streaming parameters. This configuration is transmitted to the cloud signaling server via WebSocket connection, which coordinates WebRTC session establishment between the camera source and remote viewers.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            The system leverages TURN (Traversal Using Relays around NAT) servers hosted on cloud VMs to relay media streams when direct peer-to-peer connections aren't possible due to restrictive firewalls or symmetric NAT configurations. TURN-over-TLS implementation ensures encrypted media transmission and enables unlimited horizontal scaling by adding additional relay servers as client sites grow. The STUN (Session Traversal Utilities for NAT) servers handle initial NAT type detection and public IP discovery.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            The web dashboard, built with HTML5, JavaScript, and WebRTC APIs, provides a multi-camera grid view with 4-slot configuration supporting live streaming from any registered camera. The dashboard maintains persistent WebSocket connections to the signaling server, receives camera availability updates in real-time, and establishes WebRTC peer connections on-demand when users select cameras to view. This architecture minimizes bandwidth usage by streaming only actively viewed cameras while maintaining instant availability for all configured devices.
+          </p>
+        </div>
+      </section>
+      
+      <section class="fade-in">
+        <h2 class="section-title">Key Achievements</h2>
+        <div class="metric-card">
+          <div class="metric-item"><div class="metric-value">20+</div><div class="metric-label">Client Sites Deployed</div></div>
+          <div class="metric-item"><div class="metric-value">50+</div><div class="metric-label">Cameras Streaming</div></div>
+          <div class="metric-item"><div class="metric-value">0</div><div class="metric-label">Port Forwarding Required</div></div>
+          <div class="metric-item"><div class="metric-value">< 500ms</div><div class="metric-label">Average Latency</div></div>
+          <div class="metric-item"><div class="metric-value">99.8%</div><div class="metric-label">System Uptime</div></div>
+          <div class="metric-item"><div class="metric-value">100%</div><div class="metric-label">Manufacturer Agnostic</div></div>
+        </div>
+      </section>
+      
+      <section class="fade-in">
+        <div class="glass-card" style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem; color: var(--text-primary);">Technologies & Methods</h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+            <span class="tech-tag">WebRTC</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Go2RTC</span>
+            <span class="tech-tag">TURN/STUN Servers</span>
+            <span class="tech-tag">WebSockets</span>
+            <span class="tech-tag">RTSP Protocol</span>
+            <span class="tech-tag">Tkinter GUI</span>
+            <span class="tech-tag">HTML5/JavaScript</span>
+            <span class="tech-tag">Cloud VMs (Ubuntu)</span>
+            <span class="tech-tag">Nginx</span>
+            <span class="tech-tag">TLS/SSL Encryption</span>
+            <span class="tech-tag">NAT Traversal</span>
+          </div>
+        </div>
+      </section>
+      
+      <section class="fade-in">
+        <h2 class="section-title">Results & Visualizations</h2>
+        <div class="results-grid">
+          
+          <!-- Result 1: Add Camera Interface -->
+          <div class="fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">1. Camera Agent - Adding New Camera</h3>
+                <div class="result-image">
+                  <img src="assets/images/webrtc-camera/01_add_camera.png" 
+                      alt="Camera Agent Add Camera Interface"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>
+                <div class="result-description">
+                  <p><strong>Description:</strong> The camera agent application's "Add New Camera" interface running at a client site. Users input the camera name (e.g., "Camera_1") and RTSP URL with credentials (rtsp://user:password@192.168.x.x:554/cam/realmonitor?channel=1&subtype=0). When "Add Camera to Cloud" is clicked, the agent validates the RTSP connection, generates a go2rtc YAML configuration entry defining the camera source, and transmits this configuration to the cloud signaling server via secure WebSocket connection. The signaling server receives the configuration, updates its camera registry, and broadcasts availability to all connected dashboard clients. The service status indicator shows whether the camera agent's background service is running—when stopped, cameras won't sync to the cloud. This interface eliminates manual YAML editing and provides a user-friendly way for non-technical staff to onboard cameras without networking knowledge.</p>
+                </div>
+              
+            </div>
+          </div>
+
+          <!-- Result 2: Configured Cameras List -->
+          <div class="fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">2. Camera Agent - Configured Cameras & Cloud Connection</h3>
+                <div class="result-image">
+                  <img src="assets/images/webrtc-camera/02_configured_cameras.png" 
+                      alt="Configured Cameras List"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>
+                <div class="result-description">
+                  <p><strong>Description:</strong> The camera agent's "Configured Cameras" section displays all successfully added cameras with their RTSP URLs and removal options. Below, the "Cloud Connection" panel shows critical networking details: the cloud dashboard URL, TURN server address for media relay, local API port for go2rtc control, and WebRTC port for peer connections. Once the service is started via the "Start Service" button, the agent establishes a persistent WebSocket connection to the signaling server, continuously monitoring camera availability and relaying status updates. The TURN server handles media relay when direct peer-to-peer connections fail due to symmetric NAT or firewall restrictions. The local go2rtc instance manages RTSP-to-WebRTC transcoding, converting camera streams into WebRTC-compatible formats. This architecture allows cameras on private networks (192.168.x.x) to be securely accessible from the public cloud dashboard without exposing the local network or requiring port forwarding on client routers.</p>
+                </div>
+              
+            </div>
+          </div>
+          
+          <!-- Result 3: Service Logs -->
+          <div class="fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">3. Camera Agent - Real-Time Service Logs</h3>
+                <div class="result-image">
+                  <img src="assets/images/webrtc-camera/03_service_logs.png" 
+                      alt="Service Logs Terminal"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>
+                <div class="result-description">
+                  <p><strong>Description:</strong> Real-time service logs displaying the camera agent's operational status with color-coded messages. The logs show the complete camera registration workflow: "Camera 'Camera_1' added successfully!" (yellow bulb icon) confirms initial addition, "Camera 'Camera_1' added successfully" (green checkmark) indicates validation, "Loaded 1 configured camera(s)" shows persistence across restarts, "Adding camera: Camera_1..." begins the cloud sync process, and "Camera Agent Ready" signals full operational status. These logs provide transparency into the agent's internal state machine, helping troubleshoot connectivity issues between local cameras, the go2rtc transcoding service, and the remote signaling server. The logging system tracks WebSocket connection state, TURN server reachability, camera stream health, and configuration changes—critical for diagnosing network issues in production deployments across 20+ client sites. The logs also record automatic reconnection attempts when network interruptions occur, ensuring the system self-heals without manual intervention.</p>
+                </div>
+              
+            </div>
+          </div>
+          
+          <!-- Result 4: Cloud Dashboard -->
+          <div class="fade-in">
+            <div class="glass-card">
+              
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">4. Cloud Dashboard - Multi-Camera WebRTC Streaming</h3>
+                <div class="result-image">
+                  <img src="assets/images/webrtc-camera/04_cloud_dashboard.png" 
+                      alt="Cloud Dashboard Camera Streaming"
+                      style="max-width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>
+                <div class="result-description">
+                  <p><strong>Description:</strong> The cloud dashboard interface displaying the 4-camera grid view with real-time WebRTC video streaming. The header shows "4-Camera Multi-Network WebRTC Streaming" with cloud server connection status. "Refresh Available Cameras" button queries the signaling server for updated camera lists across all connected sites. Camera Slot 1 (marked "LIVE" in green) displays an active stream from "Camera 1" showing a room interior—the video is being transmitted via WebRTC peer connection through the TURN relay server from a remote client site. The other slots (2, 3, 4 marked "READY" in red) await camera selection from dropdowns populated with all registered cameras across the network. Each slot includes Start/Stop controls, status indicators, and real-time connection logs showing WebRTC signaling state transitions: "Answer processed," "State: connecting," "ICE: connected," "Connected!" This dashboard operates entirely in the browser using JavaScript WebRTC APIs (RTCPeerConnection), establishing peer connections on-demand when users click "Start" to minimize bandwidth usage. The system automatically handles ICE candidate exchange through the signaling server, negotiates optimal connection paths (attempting direct peer-to-peer first, falling back to TURN relay if needed), and maintains stable <500ms latency streams. Multiple users can simultaneously view different camera combinations without impacting performance, as each viewer establishes independent WebRTC sessions.</p>
+                </div>
+              
+            </div>
+          </div>
+          
+        </div>
+      </section>
+      
+      <section class="fade-in" style="margin-top: 3rem;">
+        <div class="glass-card" style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--text-primary);">Conclusion</h2>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            This Cloud-Based WebRTC Camera Streaming System demonstrates a production-grade solution to one of the most challenging problems in distributed surveillance: secure, low-latency remote camera access without networking complexity. By eliminating port forwarding requirements and leveraging cloud-based TURN/STUN infrastructure, the system reduced deployment time per site from days to under 30 minutes while maintaining enterprise-level security through TLS encryption and isolated peer connections.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            The architecture's manufacturer-agnostic approach via RTSP protocol support provides unparalleled flexibility—working seamlessly with Hikvision, Dahua, Axis, and other IP camera brands without vendor lock-in. The modular design with separate camera agents, signaling servers, and relay infrastructure enables independent scaling of each component based on load. Currently serving 20+ client sites with 50+ cameras, the system maintains 99.8% uptime and sub-500ms latency, validating the architectural decisions around WebRTC for real-time media transmission.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            Future enhancements include implementing adaptive bitrate streaming based on network conditions, adding AI-powered motion detection and event triggering, developing mobile applications for iOS/Android using the same WebRTC infrastructure, and expanding the system to support two-way audio communication and PTZ (pan-tilt-zoom) control.
+          </p>
+        </div>
+      </section>
+      
+    </div>
+  </main>
+  
+  <footer>
+    <div class="footer-content">
+      <h3 class="footer-title">Let's Connect</h3>
+      <div class="contact-info">
+        <a href="mailto:alzahad200@gmail.com" class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <span>alzahad200@gmail.com</span>
+        </a>
+        <a href="tel:+971565808407" class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          <span>+971 56 580 8407</span>
+        </a>
+        <a href="https://linkedin.com/in/alzahad-nowshad" target="_blank" class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Alzahad Nowshad. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>

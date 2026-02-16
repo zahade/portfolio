@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zahad - Resume / CV">
+  <title>Zahad - Resume</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .resume-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .resume-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    
+    .resume-viewer {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--glass-shadow);
+      min-height: 600px;
+    }
+    
+    .pdf-embed {
+      width: 100%;
+      height: 800px;
+      border: none;
+      border-radius: var(--radius-md);
+      background: white;
+    }
+    
+    .resume-placeholder {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-secondary);
+    }
+    
+    .resume-placeholder svg {
+      margin-bottom: 2rem;
+      opacity: 0.5;
+    }
+    
+    .resume-placeholder h3 {
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+    
+    .resume-placeholder p {
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    
+    .download-formats {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+    
+    .format-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1.5rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      min-width: 150px;
+      transition: all var(--transition-medium);
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+    
+    .format-option:hover {
+      background: rgba(255, 0, 110, 0.1);
+      border-color: var(--color-accent-magenta);
+      transform: translateY(-5px);
+    }
+    
+    .format-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient-accent);
+      border-radius: var(--radius-sm);
+    }
+    
+    .format-label {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    
+    .format-description {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+        .quick-summary-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .quick-summary-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 242, 0, 0.3);
+      box-shadow: 0 8px 30px rgba(255, 242, 0, 0.15);
+    }
+    
+
+    
+    .quick-summary-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+    
+    .quick-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+
+    
+    .summary-label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .summary-value {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    
+    @media (max-width: 768px) {
+      .pdf-embed {
+        height: 600px;
+      }
+      
+      .resume-viewer {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Animated Background -->
+  <div class="background-animation">
+    <div class="geometric-shape shape-1"></div>
+    <div class="geometric-shape shape-2"></div>
+    <div class="geometric-shape shape-3"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+  </div>
+  
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Zahad</a>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="work-experience.html">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      
+      <h1 class="section-title fade-in text-center">Resume / CV</h1>
+      
+      <div class="resume-container">
+        
+        <!-- Action Buttons -->
+        <div class="resume-actions fade-in">
+          <a href="assets/resume.pdf" download class="btn btn-primary">
+            <span style="display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download PDF
+            </span>
+          </a>
+          <button onclick="window.print()" class="btn btn-secondary">
+            <span style="display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 6 2 18 2 18 9"/>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                <rect x="6" y="14" width="12" height="8"/>
+              </svg>
+              Print Resume
+            </span>
+          </button>
+        </div>
+        
+        <!-- Resume Viewer -->
+        <div class="resume-viewer fade-in">
+          
+          <!-- Option 1: Embed PDF (uncomment when you have a PDF) -->
+          <iframe src="assets/resume.pdf" class="pdf-embed" title="Resume PDF"></iframe>
+          
+        </div>
+
+        <!-- Quick Summary -->
+        <div class="fade-in" style="margin-top: 3rem;">
+          <div class="quick-summary-card">
+            <div class="quick-summary-content">
+              <h3 class="quick-summary-title">
+                Quick Summary
+              </h3>
+              <div class="quick-summary-grid">
+                <div class="summary-item">
+                  <div class="summary-label">Current Role</div>
+                  <div class="summary-value">Data Engineer</div>
+                </div>
+                <div class="summary-item">
+                  <div class="summary-label">Location</div>
+                  <div class="summary-value">Dubai, UAE</div>
+                </div>
+                <div class="summary-item">
+                  <div class="summary-label">Experience</div>
+                  <div class="summary-value">1+ Years</div>
+                </div>
+                <div class="summary-item">
+                  <div class="summary-label">Education</div>
+                  <div class="summary-value">BEng Computer Systems</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <h3 class="footer-title">Let's Connect</h3>
+      <div class="contact-info">
+        <a href="mailto:alzahad200@gmail.com" class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <span>alzahad200@gmail.com</span>
+        </a>
+        <a href="tel:+971565808407" class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          <span>+971 56 580 8407</span>
+        </a>
+        <a href="https://linkedin.com/in/alzahad-nowshad" target="_blank" class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Alzahad Nowshad. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>

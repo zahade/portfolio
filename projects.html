@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alzahad Nowshad - Projects Portfolio">
+  <title>Alzahad Nowshad - Projects</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .projects-intro {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .projects-intro h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .projects-intro p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .project-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-accent);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--color-accent-magenta);
+      box-shadow: 0 8px 30px rgba(255, 255, 0, 0.2);
+    }
+    
+    .project-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .project-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--gradient-accent);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+    
+    .project-description {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-tag {
+      padding: 0.35rem 0.75rem;
+      background: rgba(255, 255, 0, 0.1);
+      border: 1px solid var(--color-accent-magenta);
+      color: var(--color-accent-magenta);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+    }
+    
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-accent-magenta);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    
+    .project-link svg {
+      transition: transform 0.3s ease;
+    }
+    
+    .project-card:hover .project-link svg {
+      transform: translateX(5px);
+    }
+    
+    .coming-soon-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.35rem 0.75rem;
+      background: rgba(100, 100, 100, 0.2);
+      border: 1px solid rgba(150, 150, 150, 0.5);
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="background-animation">
+    <div class="geometric-shape shape-1"></div>
+    <div class="geometric-shape shape-2"></div>
+    <div class="geometric-shape shape-3"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+  </div>
+  
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Alzahad</a>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="work-experience.html">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main>
+    <div class="container">
+      
+      <div class="projects-intro fade-in">
+        <h1 class="section-title">My Projects</h1>
+        <p>A collection of data science, machine learning, and software engineering projects showcasing my technical skills and problem-solving abilities.</p>
+      </div>
+      
+      <div class="projects-grid">
+        
+        <!-- Project 1: Energy Demand Forecasting -->
+        <div class="project-card fade-in" onclick="window.location.href='energy-forecasting-project.html'">
+          <div class="project-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3>Energy Demand Forecasting System</h3>
+          <p class="project-description">
+            Developed a highly accurate time-series forecasting system for the PJM Interconnection power grid using ARIMA, Prophet, XGBoost, and LSTM. Achieved 0.10% MAPE with XGBoost, representing a 99% improvement over baseline models.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">XGBoost</span>
+            <span class="project-tag">LSTM</span>
+            <span class="project-tag">Time-Series</span>
+          </div>
+          <a href="energy-forecasting-project.html" class="project-link">
+            View Project Details
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+        
+        <!-- Project 2: LLM-Powered Data Quality Agent -->
+        <div class="project-card fade-in" onclick="window.location.href='llm-data-quality-project.html'">
+          <div class="project-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+          </div>
+          <h3>LLM-Powered Data Quality Agent</h3>
+          <p class="project-description">
+            Built an intelligent data quality monitoring system using Large Language Models to automatically detect anomalies, validate data integrity, and generate human-readable quality reports for enterprise datasets.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">LLM</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">RAG</span>
+            <span class="project-tag">Groq API</span>
+          </div>
+          <a href="llm-data-quality-project.html" class="project-link">
+            View Project Details
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Project 3: WebRTC Camera Streaming System -->
+        <div class="project-card fade-in" onclick="window.location.href='webrtc-camera-project.html'">
+          <div class="project-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+          </div>
+          <h3>Cloud-Based WebRTC Camera Streaming</h3>
+          <p class="project-description">
+            Architected and deployed a self-hosted cloud surveillance infrastructure using WebRTC, enabling remote camera access across 20+ client sites without port forwarding. System processes 50+ camera streams with sub-500ms latency via TURN/STUN servers.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">WebRTC</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Cloud Infrastructure</span>
+            <span class="project-tag">Real-Time Streaming</span>
+          </div>
+          <a href="webrtc-camera-project.html" class="project-link">
+            View Project Details
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>        
+
+        <!-- Project 4: Real-Time Streaming Pipeline -->
+        <div class="project-card fade-in" onclick="window.location.href='real-time-streaming.html'">
+          <div class="project-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+          </div>
+          <h3>Real-Time Streaming Data Pipeline</h3>
+          <p class="project-description">
+            Built a production-grade streaming data pipeline using Apache Kafka and ClickHouse to process 590+ tweets in real-time with sub-10ms query performance. Orchestrated 4 containerized services with Docker achieving 100% data integrity and 1 event/second sustained throughput.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Apache Kafka</span>
+            <span class="project-tag">ClickHouse</span>
+            <span class="project-tag">Docker</span>
+            <span class="project-tag">Python</span>
+          </div>
+          <a href="real-time-streaming.html" class="project-link">
+            View Project Details
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        
+        <!-- Project 6: Add More Projects Here -->
+        <div class="project-card fade-in" style="border: 2px dashed var(--glass-border); background: transparent;">
+          <div style="text-align: center; padding: 2rem 0; color: var(--text-muted);">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin: 0 auto 1rem; opacity: 0.3;">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="16"/>
+              <line x1="8" y1="12" x2="16" y2="12"/>
+            </svg>
+            <h3 style="color: var(--text-muted); font-weight: 400;">More Projects</h3>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">Additional projects coming soon...</p>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </main>
+  
+  <footer>
+    <div class="footer-content">
+      <h3 class="footer-title">Let's Connect</h3>
+      <div class="contact-info">
+        <a href="mailto:alzahad200@gmail.com" class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <span>alzahad200@gmail.com</span>
+        </a>
+        <a href="tel:+971565808407" class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          <span>+971 56 580 8407</span>
+        </a>
+        <a href="https://linkedin.com/in/alzahad-nowshad" target="_blank" class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Alzahad Nowshad. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>

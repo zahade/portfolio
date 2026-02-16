@@ -1,0 +1,35 @@
+CUSTOM ADDITIONAL INFORMATION ABOUT ALZAHAD NOWSHAD
+=====================================================
+
+This file contains additional information not present in the main portfolio pages.
+Add any personal details, preferences, or context you want the AI assistant to know about.
+
+PERSONALITY & WORK STYLE
+-------------------------
+[Add information about your personality, work style, collaboration preferences, etc.]
+
+
+CAREER GOALS & ASPIRATIONS
+---------------------------
+[Add specific career goals, dream companies, positions you're targeting, etc.]
+
+
+ADDITIONAL SKILLS & INTERESTS
+------------------------------
+[Add any skills or interests not covered in the main portfolio]
+
+
+AVAILABILITY & PREFERENCES
+---------------------------
+[Add information about job search status, location preferences, remote work preferences, etc.]
+
+
+FUN FACTS & PERSONAL DETAILS
+-----------------------------
+[Add interesting facts about yourself, hobbies, achievements, etc.]
+
+
+CUSTOM Q&A
+----------
+[Add specific questions and answers you want the AI to handle]
+
